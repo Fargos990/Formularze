@@ -1,0 +1,41 @@
+.container
+{
+    margin:0;
+    width:100%;
+    height:50vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size:1.2em;
+}
+.table
+{
+    flex-basis: 60%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border:2px dashed #113845;
+    
+}
+.table__row
+{
+    padding:0.7em;
+    border:3px dashed #44add0;
+    margin:0.5em;
+    flex-basis: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.table__row__title
+{
+    text-align: center;
+    flex-basis: 14.3%;
+}
+
+.table__row__cell
+{
+    flex-basis: 14.3%;
+    text-align: center;
+}

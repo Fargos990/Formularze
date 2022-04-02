@@ -1,0 +1,73 @@
+.form
+{
+    margin-top:3em;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.form__kontaktowe
+{
+    flex-basis: 100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+.form__kontaktowe>h2
+{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.form__kontaktowe > label
+{
+    padding:1em;
+    margin:1em;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    font-size:1.1em;
+}
+.form__kontaktowe__stacjonarny
+{
+    padding:1em;
+    margin:1em;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    font-size:1.1em;
+}
+
+.form__kontaktowe > label > input,select
+{
+    margin-left:0.7em;
+}
+
+.form__odbiorca > h2
+{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.form__odbiorca
+{
+    flex-basis: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form__odbiorca>span
+{
+    font-size:1.1em;
+}
+
+.form__submit
+{
+    margin:1em;
+    flex-basis: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+#numer_reactive
+{
+    margin-left:0.4em;
+}

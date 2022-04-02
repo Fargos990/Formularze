@@ -1,0 +1,23 @@
+<div class="container">
+<table class="table">
+    <tr class="table__row">
+        <th class="table__row__title">Imie</th>
+        <th class="table__row__title">Nazwisko</th>
+        <th class="table__row__title">Email</th>
+        <th class="table__row__title">Telefon Stacjonarny</th>
+        <th class="table__row__title">Telefon Komorkowy</th>
+        <th class="table__row__title">Odbiorca</th>
+        <th class="table__row__title">Usun</th>
+    </tr>
+
+    <tr *ngFor="let data of dane; let i = index" class="table__row">
+        <td class="table__row__cell">{{data.imie}}</td>
+        <td class="table__row__cell">{{data.nazwisko}}</td>
+        <td class="table__row__cell">{{data.email}}</td>
+        <td class="table__row__cell">{{data.stacjonarny}}</td>
+        <td class="table__row__cell">{{data.komorkowy}}</td>
+        <td class="table__row__cell">{{data.odbiorca}}</td>
+        <td class="table__row__cell"><input type="button" value="usun" (click)="OnClick(i)" [ngStyle]="{cursor:'pointer'}"></td>
+    </tr>
+</table>
+</div>

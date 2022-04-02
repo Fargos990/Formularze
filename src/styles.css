@@ -1,0 +1,27 @@
+input[type=text],input[type=email],select
+{
+    outline:none;
+    padding:0.2em;
+}
+input[type=submit]
+{
+    padding:1em;
+    border-radius: 1em;
+}
+input[type=button]
+{
+    padding:0.7em;
+    border-radius: 1em;
+}
+.untouched, .active
+{
+    border:2px dashed #33bdeb;
+}
+.wrong
+{
+    border:2.5px dashed red;
+}
+.right
+{
+    border:2.5px dashed green;
+}

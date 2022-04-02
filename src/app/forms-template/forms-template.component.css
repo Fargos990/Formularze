@@ -1,0 +1,67 @@
+.form
+{
+    margin-top:3em;
+    display:flex;
+    flex-wrap: wrap;
+}
+.form > .dane_pod
+{
+    flex-basis: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    
+}
+.form > .dane_pod > h2
+{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.form > .dane_pod > label
+{
+    padding:1em;
+    margin:1em;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    font-size:1.1em;
+}
+.form > .dane_pod > label > input,select
+{
+    margin-left:0.7em;
+}
+
+.form > .dane_pod > label > label
+{
+    margin-left:0.3em;
+}
+
+.form > .dane_fak
+{
+    flex-basis: 100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.form > .dane_fak > h2
+{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+
+.odbiorca
+{
+    flex-basis: 100%;
+    display:flex;
+    justify-content: center;
+    font-size:1.1em;
+}
+
+.submit_holder
+{
+    margin:1em;
+    flex-basis: 100%;
+    display:flex;
+    justify-content: center;
+}

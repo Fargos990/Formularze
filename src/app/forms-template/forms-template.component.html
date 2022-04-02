@@ -1,0 +1,108 @@
+<form #daneForm="ngForm" (ngSubmit)="OnSubmit()" class="form">
+  <div class="dane_pod">
+
+  <h2>Template Form <br>Dane Kontaktowe</h2>
+    <label for="imie"
+      >Imie:
+      <input
+        type="text"
+        name="imie"
+        id="imie"
+        [(ngModel)]="dane.imie"
+        pattern="[a-zA-Z]*"
+        #imie="ngModel"
+        required
+        [ngClass]="{wrong: imie.invalid && imie.touched,right: imie.valid && imie.touched, untouched:imie.untouched }"  
+      />
+  </label>
+    <label for="nazwisko"
+      >Nazwisko:
+      <input
+        type="text"
+        name="nazwisko"
+        id="nazwisko"
+        [(ngModel)]="dane.nazwisko"
+        required
+        pattern="[a-zA-Z].{4,}"
+        #nazwisko="ngModel"
+        [ngClass]="{wrong: nazwisko.invalid && nazwisko.touched,right: nazwisko.valid && nazwisko.touched, untouched:nazwisko.untouched }"  
+    /></label>
+    <label for="email"
+      >Email:
+      <input type="email" name="email" id="email" [(ngModel)]="dane.email"
+      required
+      #email = 'ngModel'
+      [ngClass]="{wrong: email.invalid && email.touched,right: email.valid && email.touched, untouched: email.untouched }" 
+    /></label>
+
+  <label for="stacjonarny_kierunkowy">
+    Telefon Stacjonarny:
+    <select name="stacjonarny_kierunkowy" id="stacjonarny_kierunkowy" required ngClass="right" [(ngModel)]="dane.telefonStacjonarnyKierunkowy"
+    #stac_kier = 'ngModel'
+    [ngClass]="{wrong: stac_kier.invalid && stac_kier.touched,right: stac_kier.valid && stac_kier.touched, untouched: stac_kier.untouched }" >
+      <option [value]="kier" *ngFor="let kier of kierunkowy">{{kier}}</option>
+      
+    </select>
+    <label for="stacjonarny_numer"
+    >
+    <input
+      type="text"
+      name="stacjonarny_numer"
+      id="stacjonarny_numer"
+      [(ngModel)]="dane.telefonStacjonarny"
+      pattern="[0-9].{6,6}"
+      required
+      #stacjonarny = 'ngModel'
+      [ngClass]="{wrong: stacjonarny.invalid && stacjonarny.touched,right: stacjonarny.valid && stacjonarny.touched, untouched: stacjonarny.untouched }" 
+  /></label>
+  </label>
+
+
+    <label for="komorkowy"
+      >Telefon Komórkowy:
+      <input
+        type="text"
+        name="komorkowy"
+        id="komorkowy"
+        [(ngModel)]="dane.telefonKomorkowy"
+        pattern="[0-9].{8,8}"
+        required
+        #komorkowy = 'ngModel'
+        [ngClass]="{wrong: komorkowy.invalid && komorkowy.touched,right: komorkowy.valid && komorkowy.touched, untouched: komorkowy.untouched }" 
+    /></label>
+  </div>  
+
+  <div class="dane_fak">
+  
+    <h2>Dane do wystawienia faktury</h2>
+    <div class="odbiorca">
+    Odbiorca:
+    <label for="osobaPrywatna"
+      ><input
+        required
+        type="radio"
+        name="faktura"
+        id="osobaPrywatna"
+        value="osobaPrywatna"
+        [(ngModel)]="dane.odbiorca"
+      />
+      Osoba Prywatna</label
+    >
+    <label for="firma">
+      <input
+        type="radio"
+        name="faktura"
+        id="firma"
+        value="firma"
+        [(ngModel)]="dane.odbiorca"
+      />
+      Firma</label
+    ><br />
+  </div>
+  </div>
+  <div class="submit_holder">
+    <input type="submit" value="Wyslij" 
+    [disabled]="!daneForm.form.valid" 
+    [ngStyle]="{cursor: daneForm.form.valid ? 'pointer' : 'default'}"/>
+  </div>
+  </form>

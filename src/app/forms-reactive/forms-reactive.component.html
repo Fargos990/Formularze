@@ -1,0 +1,68 @@
+<form [formGroup]="dane" (ngSubmit)="OnSubmit()" #formularz="ngForm" class="form">
+
+    <div formGroupName="kontaktowe" class="form__kontaktowe">
+        <h2>Reactive Form<br>Dane Kontaktowe</h2>
+        <label for="imie_reactive">Imie: <input type="text" id="imie_reactive" formControlName="imie"
+        [ngClass]="{
+            wrong: dane.get('kontaktowe.imie')?.invalid && dane.get('kontaktowe.imie')?.touched, 
+            right:dane.get('kontaktowe.imie')?.valid && dane.get('kontaktowe.imie')?.touched,
+            untouched: dane.get('kontaktowe.imie')?.untouched
+        }"
+            
+        ></label>
+        <label for="nazwisko_reactive">Nazwisko: <input type="text" id="nazwisko_reactive" formControlName="nazwisko"
+        [ngClass]="{
+            wrong: dane.get('kontaktowe.nazwisko')?.invalid && dane.get('kontaktowe.nazwisko')?.touched, 
+            right:dane.get('kontaktowe.nazwisko')?.valid && dane.get('kontaktowe.nazwisko')?.touched,
+            untouched: dane.get('kontaktowe.nazwisko')?.untouched
+        }"
+        
+        ></label>
+        <label for="email_reactive">Email: <input type="email" id="email_reactive" formControlName="email"
+            [ngClass]="{
+                wrong: dane.get('kontaktowe.email')?.invalid && dane.get('kontaktowe.email')?.touched, 
+                right:dane.get('kontaktowe.email')?.valid && dane.get('kontaktowe.email')?.touched,
+                untouched: dane.get('kontaktowe.email')?.untouched
+            }"></label>
+        <div formGroupName="stacjonarny" class="form__kontaktowe__stacjonarny">
+            Telefon Stacjonarny: 
+            <select id="kierunkowy_reactive" formControlName="kierunkowy"
+            [ngClass]="{
+                wrong: dane.get('kontaktowe.stacjonarny.kierunkowy')?.invalid && dane.get('kontaktowe.stacjonarny.kierunkowy')?.touched, 
+                right:dane.get('kontaktowe.stacjonarny.kierunkowy')?.valid && dane.get('kontaktowe.stacjonarny.kierunkowy')?.touched,
+                untouched: dane.get('kontaktowe.stacjonarny.kierunkowy')?.untouched
+            }"
+            >
+              <option [value]="kier" *ngFor="let kier of kierunkowy">{{kier}}</option>
+            </select>
+            <label for="numer_reactive"><input type="text" id="numer_reactive" formControlName="numer"
+                [ngClass]="{
+                    wrong: dane.get('kontaktowe.stacjonarny.numer')?.invalid && dane.get('kontaktowe.stacjonarny.numer')?.touched, 
+                    right:dane.get('kontaktowe.stacjonarny.numer')?.valid && dane.get('kontaktowe.stacjonarny.numer')?.touched,
+                    untouched: dane.get('kontaktowe.stacjonarny.numer')?.untouched
+                }"        
+    
+            ></label>
+        </div>
+
+        <label for="komorkowy_reactive">Telefon Komórkowy: <input type="text" id="komorkowy_reactive" formControlName="komorkowy"
+            [ngClass]="{
+                wrong: dane.get('kontaktowe.komorkowy')?.invalid && dane.get('kontaktowe.komorkowy')?.touched, 
+                right:dane.get('kontaktowe.komorkowy')?.valid && dane.get('kontaktowe.komorkowy')?.touched,
+                untouched: dane.get('kontaktowe.komorkowy')?.untouched
+            }"
+            
+        ></label>
+
+    </div>
+
+    <div class="form__odbiorca">
+        <h2>Dane do wystawienia faktury</h2>
+    <span>Odbiorca:<label for="osobaPrywatna_reactive"><input type="radio" id="osobaPrywatna_reactive" value="osobaPrywatna" formControlName="odbiorca"> Osoba Prywatna</label>
+    <label for="firma_reactive"><input type="radio" id="firma_reactive" value="firma" formControlName="odbiorca"> Firma</label>
+</span>
+</div>
+    <div class="form__submit">
+    <input type="submit" [disabled]="!dane.valid" value="Wyslij" [ngStyle]="{cursor: dane.valid ? 'pointer' : 'default'}">
+</div>
+</form>
